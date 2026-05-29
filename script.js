@@ -79,7 +79,7 @@ initParticles();
 animateParticles();
 
 /* ─── Typing animation ───────────────────────────────────────────── */
-const roles    = ['Data Engineer', 'ML Engineer', 'Spark Developer', 'Problem Solver'];
+const roles    = ['Data Engineer', 'Analytics Engineer', 'Data Architect', 'Problem Solver'];
 let roleIndex  = 0, charIndex = 0, deleting = false;
 const typedEl  = document.querySelector('.typed-text');
 

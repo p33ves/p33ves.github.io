@@ -365,17 +365,91 @@ a:hover { color: #fff; }
   box-shadow: 0 0 14px rgba(96,165,250,0.18);
 }
 
-/* ─── Projects empty ────────────────────────────────────────────── */
-.projects-empty {
-  text-align: center; padding: 5rem 2rem;
-  border: 1px dashed var(--border-hi); border-radius: var(--radius);
-  display: flex; flex-direction: column; align-items: center; gap: 1.5rem;
+/* ─── Projects ──────────────────────────────────────────────────── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.project-card {
   background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: flex; flex-direction: column; gap: 1.1rem;
+  position: relative; overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
 }
-.projects-empty-text {
-  color: var(--text-muted); font-size: 0.95rem;
-  font-family: var(--font-mono);
+.project-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--grad);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.4s ease;
 }
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-hi);
+}
+.project-card:hover::before { transform: scaleX(1); }
+
+.project-card--blue:hover  { box-shadow: 0 25px 60px rgba(0,0,0,0.35), 0 0 40px rgba(96,165,250,0.1); }
+.project-card--purple:hover { box-shadow: 0 25px 60px rgba(0,0,0,0.35), 0 0 40px rgba(167,139,250,0.1); }
+.project-card--green:hover  { box-shadow: 0 25px 60px rgba(0,0,0,0.35), 0 0 40px rgba(52,211,153,0.08); }
+
+.project-header {
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.project-num {
+  font-family: var(--font-mono); font-size: 0.68rem;
+  color: var(--text-muted); opacity: 0.45; font-weight: 500;
+}
+
+.project-badge {
+  font-size: 0.62rem; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 0.18rem 0.6rem; border-radius: 99px;
+  background: rgba(96,165,250,0.06);
+  border: 1px solid rgba(96,165,250,0.14);
+  color: var(--text-muted);
+}
+
+.project-icon {
+  width: 46px; height: 46px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 12px;
+}
+.project-icon--blue   { color: var(--accent);  background: rgba(96,165,250,0.09);  border: 1px solid rgba(96,165,250,0.18); }
+.project-icon--purple { color: var(--accent2); background: rgba(167,139,250,0.09); border: 1px solid rgba(167,139,250,0.18); }
+.project-icon--green  { color: var(--accent3); background: rgba(52,211,153,0.09);  border: 1px solid rgba(52,211,153,0.18); }
+
+.project-title {
+  font-family: var(--font-mono); font-size: 1.05rem;
+  font-weight: 600; letter-spacing: -0.3px; color: var(--text);
+}
+
+.project-desc {
+  color: var(--text-muted); font-size: 0.875rem; line-height: 1.75;
+  flex-grow: 1;
+}
+
+.project-stack {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+}
+.project-stack span {
+  font-size: 0.7rem; font-weight: 500;
+  padding: 0.2rem 0.6rem; border-radius: 5px;
+  background: rgba(96,165,250,0.05);
+  border: 1px solid rgba(96,165,250,0.11);
+  color: var(--text-muted);
+}
+
+.project-footer { margin-top: 0.25rem; }
+
+.btn-sm { padding: 0.48rem 1rem; font-size: 0.78rem; }
+
+.projects-cta { text-align: center; margin-top: 3rem; }
 
 /* ─── Contact ──────────────────────────────────────────────────── */
 .contact-wrapper { text-align: center; max-width: 580px; margin: 0 auto; }
@@ -419,6 +493,7 @@ a:hover { color: #fff; }
   .hero-badge { margin-left: auto; margin-right: auto; }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .skills-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
   .nav { padding: 1rem 1.5rem; }
@@ -431,6 +506,7 @@ a:hover { color: #fff; }
   }
   .menu-toggle { display: flex; }
   .about-stats { grid-template-columns: 1fr 1fr; }
+  .projects-grid { grid-template-columns: 1fr; }
 }
 
 /* ─── Fade-in ───────────────────────────────────────────────────── */
