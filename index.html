@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vignesh Perumal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">vp<span class="dot">.</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-greeting">Hi, I'm</p>
+      <h1 class="hero-name">Vignesh Perumal</h1>
+      <h2 class="hero-title">
+        <span class="typed-text"></span><span class="cursor">|</span>
+      </h2>
+      <p class="hero-desc">
+        I build things for the web — clean code, thoughtful design, and robust systems.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View my work</a>
+        <a href="https://github.com/p33ves" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-card">
+        <div class="code-card-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="filename">about.js</span>
+        </div>
+        <pre class="code-body"><code><span class="kw">const</span> <span class="var">vignesh</span> = {
+  <span class="key">name</span>: <span class="str">"Vignesh Perumal"</span>,
+  <span class="key">role</span>: <span class="str">"Data &amp; ML Engineer"</span>,
+  <span class="key">location</span>: <span class="str">"India"</span>,
+  <span class="key">passions</span>: [
+    <span class="str">"Machine Learning"</span>,
+    <span class="str">"Cloud &amp; Azure"</span>,
+    <span class="str">"Automation"</span>,
+  ],
+  <span class="key">available</span>: <span class="bool">true</span>,
+};</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-grid fade-in">
+        <div class="about-text">
+          <p>
+            I'm a passionate developer who loves turning complex problems into elegant solutions.
+            I enjoy working across the full stack — from crafting pixel-perfect UIs to designing
+            scalable backend systems.
+          </p>
+          <p>
+            When I'm not coding, you'll find me exploring open-source projects, contributing to
+            the community, or learning something new. I believe in writing code that's not just
+            functional, but readable and maintainable.
+          </p>
+          <a href="https://github.com/p33ves" target="_blank" rel="noopener" class="btn btn-outline">
+            View GitHub Profile →
+          </a>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+            <p>Projects Built</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="5">0</span><span class="stat-plus">+</span>
+            <p>Open Source Contributions</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="2">0</span><span class="stat-plus">+</span>
+            <p>Years of Experience</p>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
+            <p>Passion for Code</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Tech <span>Stack</span></h2>
+      <div class="skills-grid fade-in">
+        <div class="skill-category">
+          <h3>Data &amp; ML</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>Jupyter</span><span>Machine Learning</span>
+            <span>SQL</span><span>Big Data</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Cloud &amp; Backend</h3>
+          <div class="skill-tags">
+            <span>Azure</span><span>PowerShell</span>
+            <span>REST APIs</span><span>Node.js</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>Tools</h3>
+          <div class="skill-tags">
+            <span>Git</span><span>Docker</span><span>Linux</span>
+            <span>JavaScript</span><span>Vue</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured <span>Projects</span></h2>
+      <div class="projects-empty fade-in">
+        <p class="projects-empty-text">Projects coming soon — stay tuned.</p>
+        <a href="https://github.com/p33ves?tab=repositories" target="_blank" rel="noopener" class="btn btn-outline">
+          GitHub →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <div class="contact-wrapper fade-in">
+        <p class="contact-desc">
+          I'm currently open to new opportunities. Whether you have a question,
+          a project idea, or just want to say hi — my inbox is always open.
+        </p>
+        <a href="mailto:itsvigneshperumal@gmail.com" class="btn btn-primary btn-lg">
+          Say Hello
+        </a>
+        <div class="social-links">
+          <a href="https://github.com/p33ves" target="_blank" rel="noopener" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          </a>
+          <a href="mailto:itsvigneshperumal@gmail.com" title="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Designed & Built by <strong>Vignesh Perumal</strong></p>
+    <p class="footer-sub">© 2026 · p33ves.github.io</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
