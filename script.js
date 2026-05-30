@@ -2,9 +2,9 @@
 const canvas = document.getElementById('canvas-bg');
 const ctx    = canvas.getContext('2d');
 
-const ACCENT      = [96, 165, 250];
-const COUNT       = 55;
-const MAX_DIST    = 160;
+const ACCENT   = [96, 165, 250];
+const COUNT    = 50;
+const MAX_DIST = 150;
 
 let W, H, particles = [];
 
@@ -18,20 +18,19 @@ class Particle {
   reset(rand) {
     this.x  = rand ? Math.random() * W : (Math.random() < 0.5 ? 0 : W);
     this.y  = rand ? Math.random() * H : Math.random() * H;
-    this.vx = (Math.random() - 0.5) * 0.35;
-    this.vy = (Math.random() - 0.5) * 0.35;
-    this.r  = Math.random() * 1.5 + 0.8;
+    this.vx = (Math.random() - 0.5) * 0.3;
+    this.vy = (Math.random() - 0.5) * 0.3;
+    this.r  = Math.random() * 1.4 + 0.7;
   }
   update() {
-    this.x += this.vx;
-    this.y += this.vy;
+    this.x += this.vx; this.y += this.vy;
     if (this.x < 0 || this.x > W) this.vx *= -1;
     if (this.y < 0 || this.y > H) this.vy *= -1;
   }
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${ACCENT.join(',')}, 0.55)`;
+    ctx.fillStyle = `rgba(${ACCENT.join(',')}, 0.45)`;
     ctx.fill();
   }
 }
@@ -48,12 +47,12 @@ function drawConnections() {
       const dy = particles[i].y - particles[j].y;
       const d  = Math.sqrt(dx * dx + dy * dy);
       if (d < MAX_DIST) {
-        const alpha = (1 - d / MAX_DIST) * 0.22;
+        const alpha = (1 - d / MAX_DIST) * 0.18;
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
         ctx.strokeStyle = `rgba(${ACCENT.join(',')}, ${alpha})`;
-        ctx.lineWidth   = 0.6;
+        ctx.lineWidth   = 0.5;
         ctx.stroke();
       }
     }
@@ -69,19 +68,16 @@ function animateParticles() {
 
 window.addEventListener('resize', () => {
   resize();
-  particles.forEach(p => {
-    if (p.x > W) p.x = W;
-    if (p.y > H) p.y = H;
-  });
+  particles.forEach(p => { if (p.x > W) p.x = W; if (p.y > H) p.y = H; });
 }, { passive: true });
 
 initParticles();
 animateParticles();
 
 /* ─── Typing animation ───────────────────────────────────────────── */
-const roles    = ['Data Engineer', 'Analytics Engineer', 'Data Architect', 'Problem Solver'];
-let roleIndex  = 0, charIndex = 0, deleting = false;
-const typedEl  = document.querySelector('.typed-text');
+const roles   = ['Data Engineer', 'Analytics Engineer', 'Data Architect', 'Problem Solver'];
+let roleIndex = 0, charIndex = 0, deleting = false;
+const typedEl = document.querySelector('.typed-text');
 
 function type() {
   const current = roles[roleIndex];
@@ -91,14 +87,14 @@ function type() {
 
   if (!deleting && charIndex === current.length) {
     deleting = true;
-    setTimeout(type, 2200);
+    setTimeout(type, 2000);
     return;
   }
   if (deleting && charIndex === 0) {
     deleting  = false;
     roleIndex = (roleIndex + 1) % roles.length;
   }
-  setTimeout(type, deleting ? 50 : 95);
+  setTimeout(type, deleting ? 45 : 90);
 }
 type();
 
@@ -106,13 +102,46 @@ type();
 function animateCounter(el) {
   const target = +el.dataset.target;
   let count    = 0;
-  const step   = Math.max(1, Math.ceil(target / 45));
+  const step   = Math.max(1, Math.ceil(target / 50));
   const timer  = setInterval(() => {
     count = Math.min(count + step, target);
     el.textContent = count;
     if (count >= target) clearInterval(timer);
-  }, 32);
+  }, 28);
 }
+
+/* ─── Scroll progress bar ────────────────────────────────────────── */
+const progressBar = document.getElementById('scrollProgress');
+
+function updateScrollProgress() {
+  const scrollTop    = window.scrollY;
+  const docHeight    = document.documentElement.scrollHeight - window.innerHeight;
+  const pct          = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  progressBar.style.width = pct + '%';
+}
+
+/* ─── Nav: scroll shadow + active section ────────────────────────── */
+const nav      = document.getElementById('nav');
+const navLinks = document.querySelectorAll('.nav-links a[data-section]');
+const sections = document.querySelectorAll('section[id]');
+
+function updateNav() {
+  const scrollY = window.scrollY;
+
+  nav.classList.toggle('scrolled', scrollY > 40);
+  updateScrollProgress();
+
+  let current = '';
+  sections.forEach(sec => {
+    if (scrollY >= sec.offsetTop - 120) current = sec.id;
+  });
+
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.dataset.section === current);
+  });
+}
+
+window.addEventListener('scroll', updateNav, { passive: true });
 
 /* ─── Intersection observers ─────────────────────────────────────── */
 const fadeObserver = new IntersectionObserver((entries) => {
@@ -122,7 +151,7 @@ const fadeObserver = new IntersectionObserver((entries) => {
       fadeObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.08 });
 
 document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
@@ -138,18 +167,10 @@ const counterObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
 
 /* ─── Mobile menu ────────────────────────────────────────────────── */
-const toggle   = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+const toggle    = document.querySelector('.menu-toggle');
+const mobileNav = document.querySelector('.nav-links');
 
-toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-navLinks.querySelectorAll('a').forEach(a =>
-  a.addEventListener('click', () => navLinks.classList.remove('open'))
+toggle.addEventListener('click', () => mobileNav.classList.toggle('open'));
+mobileNav.querySelectorAll('a').forEach(a =>
+  a.addEventListener('click', () => mobileNav.classList.remove('open'))
 );
-
-/* ─── Nav scroll shadow ──────────────────────────────────────────── */
-const nav = document.querySelector('.nav');
-window.addEventListener('scroll', () => {
-  nav.style.boxShadow = window.scrollY > 40
-    ? '0 4px 40px rgba(0,0,0,0.5)'
-    : 'none';
-}, { passive: true });

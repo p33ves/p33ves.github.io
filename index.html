@@ -3,50 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vignesh Perumal</title>
+  <title>Vignesh Perumal — Senior Data Engineer</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
   <canvas id="canvas-bg"></canvas>
   <div class="glow-top"></div>
 
   <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-logo">vp.</div>
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo">vp.</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" data-section="about">About</a></li>
+      <li><a href="#skills" data-section="skills">Skills</a></li>
+      <li><a href="#projects" data-section="projects">Projects</a></li>
+      <li><a href="#contact" data-section="contact">Contact</a></li>
     </ul>
-    <button class="menu-toggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <a href="mailto:itsvigneshperumal@gmail.com" class="btn btn-primary btn-xs nav-cta">Hire Me</a>
+      <button class="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="hero-content">
       <div class="hero-badge">
         <span class="hero-badge-dot"></span>
         available for opportunities
       </div>
       <p class="hero-greeting">Hi, I'm</p>
-      <h1 class="hero-name">Vignesh Perumal</h1>
+      <h1 class="hero-name">Vignesh<br>Perumal</h1>
       <h2 class="hero-title">
         <span class="typed-text"></span><span class="cursor">|</span>
       </h2>
       <p class="hero-desc">
-        I engineer data pipelines, ML systems, and cloud solutions by turning raw data into real impact.
+        I engineer data pipelines, ML systems, and cloud solutions — turning raw data into measurable business impact.
       </p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View my work</a>
-        <a href="https://github.com/p33ves" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="https://github.com/p33ves" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          GitHub
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span class="hero-meta-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Vancouver, BC
+        </span>
+        <span class="hero-meta-dot"></span>
+        <span class="hero-meta-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          8+ Years Experience
+        </span>
+        <span class="hero-meta-dot"></span>
+        <span class="hero-meta-item">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          Simon Fraser University
+        </span>
       </div>
     </div>
+
     <div class="hero-visual">
       <div class="code-card">
         <div class="code-card-header">
@@ -75,6 +99,11 @@
    <span class="key">.saveAsTable</span>(<span class="str">"gold.kpis"</span>))</code></pre>
       </div>
     </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+      <span class="scroll-hint-label">scroll</span>
+      <span class="scroll-hint-track"><span class="scroll-hint-thumb"></span></span>
+    </a>
   </section>
 
   <!-- ABOUT -->
@@ -85,15 +114,15 @@
       <div class="about-grid fade-in">
         <div class="about-text">
           <p>
-            I'm a Senior Data Engineer with nearly eight years of experience building data platforms and ML systems at scale. 
-            I studied at Simon Fraser University and have spent my career working across the full stack of modern data engineering, from lakehouse architecture and pipeline design to ML model deployment.
+            I'm a Senior Data Engineer with nearly eight years of experience building data platforms and ML systems at scale.
+            I studied at Simon Fraser University and have spent my career working across the full stack of modern data engineering — from lakehouse architecture and pipeline design to ML model deployment.
           </p>
           <p>
-            I specialise in building end-to-end data solutions on cloud infrastructure, working across ingestion, data quality, governance, and the systems that connect it all together. 
+            I specialise in building end-to-end data solutions on cloud infrastructure, working across ingestion, data quality, governance, and the systems that connect it all together.
             I've also built production ML systems, including retrieval-augmented pipelines and deployed models backed by vector search.
           </p>
           <p>
-            I write reliable, maintainable code and design systems that are straightforward to reason about, with the potential to scale and handle ever-changing requirements.
+            I write reliable, maintainable code and design systems that are straightforward to reason about, scalable by default, and resilient to ever-changing requirements.
           </p>
           <a href="https://github.com/p33ves" target="_blank" rel="noopener" class="btn btn-outline">
             View GitHub Profile →
@@ -101,19 +130,27 @@
         </div>
         <div class="about-stats">
           <div class="stat-card">
-            <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
+            <div class="stat-top">
+              <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
+            </div>
             <p>Projects Built</p>
           </div>
           <div class="stat-card">
-            <span class="stat-num" data-target="8">0</span><span class="stat-plus">+</span>
+            <div class="stat-top">
+              <span class="stat-num" data-target="8">0</span><span class="stat-plus">+</span>
+            </div>
             <p>Years of Experience</p>
           </div>
           <div class="stat-card">
-            <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+            <div class="stat-top">
+              <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+            </div>
             <p>Technologies</p>
           </div>
           <div class="stat-card">
-            <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
+            <div class="stat-top">
+              <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
+            </div>
             <p>Passion for Data</p>
           </div>
         </div>
@@ -127,27 +164,48 @@
       <p class="section-eyebrow">// tech_stack</p>
       <h2 class="section-title">Tech <span>Stack</span></h2>
       <div class="skills-grid fade-in">
+
         <div class="skill-category">
+          <div class="skill-cat-icon skill-cat-icon--blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
           <h3>Data Engineering</h3>
           <div class="skill-tags">
             <span>Python</span><span>Spark</span><span>Databricks</span>
             <span>SQL</span><span>Delta Lake</span><span>Big Data</span>
           </div>
         </div>
+
         <div class="skill-category">
+          <div class="skill-cat-icon skill-cat-icon--purple">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
           <h3>Cloud &amp; Automation</h3>
           <div class="skill-tags">
             <span>Azure</span><span>PowerShell</span>
             <span>Azure DevOps</span><span>REST APIs</span>
           </div>
         </div>
+
         <div class="skill-category">
+          <div class="skill-cat-icon skill-cat-icon--green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
           <h3>Tools &amp; DevOps</h3>
           <div class="skill-tags">
             <span>Git</span><span>Docker</span><span>Linux</span>
             <span>Machine Learning</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -159,7 +217,8 @@
       <h2 class="section-title">Featured <span>Projects</span></h2>
       <div class="projects-grid fade-in">
 
-        <div class="project-card project-card--blue">
+        <!-- Featured: spans 2 cols -->
+        <div class="project-card project-card--blue project-card--featured">
           <div class="project-header">
             <span class="project-num">01</span>
             <span class="project-badge">Data Engineering</span>
@@ -170,45 +229,22 @@
             </svg>
           </div>
           <h3 class="project-title">KafkerPipelines</h3>
-          <p class="project-desc">Real-time data pipeline orchestration using Apache Kafka — stream ingestion, schema registry integration, and consumer group management built for production-grade throughput.</p>
+          <p class="project-desc">Real-time data pipeline orchestration using Apache Kafka — stream ingestion, schema registry integration, and consumer group management built for production-grade throughput at scale.</p>
           <div class="project-stack">
-            <span>Python</span><span>Kafka</span><span>Streaming</span><span>Docker</span>
+            <span>Python</span><span>Kafka</span><span>Streaming</span><span>Docker</span><span>Schema Registry</span>
           </div>
           <div class="project-footer">
             <a href="https://github.com/p33ves/KafkerPipelines" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-              GitHub
+              View on GitHub
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
             </a>
           </div>
         </div>
 
-        <div class="project-card project-card--purple">
-          <div class="project-header">
-            <span class="project-num">02</span>
-            <span class="project-badge">DevOps</span>
-          </div>
-          <div class="project-icon project-icon--purple">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/>
-              <path d="M13 6h3a2 2 0 0 1 2 2v7M6 9v12"/>
-            </svg>
-          </div>
-          <h3 class="project-title">azure-code-review</h3>
-          <p class="project-desc">Automated code review workflows for Azure DevOps — PR analysis, policy enforcement, and quality gates wired directly into CI/CD pipelines to catch issues before merge.</p>
-          <div class="project-stack">
-            <span>Azure DevOps</span><span>Python</span><span>REST API</span><span>CI/CD</span>
-          </div>
-          <div class="project-footer">
-            <a href="https://github.com/p33ves/azure-code-review" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-              GitHub
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-            </a>
-          </div>
-        </div>
-
+        <!-- Regular: 1 col -->
         <div class="project-card project-card--green">
           <div class="project-header">
-            <span class="project-num">03</span>
+            <span class="project-num">02</span>
             <span class="project-badge">Database</span>
           </div>
           <div class="project-icon project-icon--green">
@@ -219,15 +255,112 @@
             </svg>
           </div>
           <h3 class="project-title">msssql-auto-dba</h3>
-          <p class="project-desc">Automated DBA operations for Microsoft SQL Server — index maintenance, backup verification, health monitoring, and scheduled administrative tasks without manual intervention.</p>
+          <p class="project-desc">Automated DBA operations for Microsoft SQL Server — index maintenance, backup verification, and health monitoring without manual intervention.</p>
           <div class="project-stack">
             <span>SQL Server</span><span>T-SQL</span><span>Python</span><span>Automation</span>
           </div>
           <div class="project-footer">
             <a href="https://github.com/p33ves/msssql-auto-dba" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-              GitHub
+              View on GitHub
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
             </a>
+          </div>
+        </div>
+
+        <!-- Regular: 1 col -->
+        <div class="project-card project-card--purple">
+          <div class="project-header">
+            <span class="project-num">03</span>
+            <span class="project-badge">DevOps</span>
+          </div>
+          <div class="project-icon project-icon--purple">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/>
+              <path d="M13 6h3a2 2 0 0 1 2 2v7M6 9v12"/>
+            </svg>
+          </div>
+          <h3 class="project-title">azure-code-review</h3>
+          <p class="project-desc">Automated code review workflows for Azure DevOps — PR analysis, policy enforcement, and quality gates wired into CI/CD pipelines to catch issues before merge.</p>
+          <div class="project-stack">
+            <span>Azure DevOps</span><span>Python</span><span>REST API</span><span>CI/CD</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/p33ves/azure-code-review" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+              View on GitHub
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Featured: spans 2 cols -->
+        <div class="project-card project-card--amber project-card--featured">
+          <div class="project-header">
+            <span class="project-num">04</span>
+            <span class="project-badge">Data Visualization</span>
+          </div>
+          <div class="project-icon project-icon--amber">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/>
+              <line x1="6" y1="20" x2="6" y2="14"/>
+              <line x1="2" y1="20" x2="22" y2="20"/>
+            </svg>
+          </div>
+          <h3 class="project-title">EndangeredSpecies</h3>
+          <p class="project-desc">Interactive data visualization exploring endangered species populations worldwide — rich charts, geographic maps, and trend analysis built to make conservation data accessible and compelling.</p>
+          <div class="project-stack">
+            <span>Python</span><span>D3.js</span><span>Data Viz</span><span>GeoJSON</span><span>Conservation</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/p33ves/EndangeredSpecies" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+              View on GitHub
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Wide: spans full row, horizontal layout -->
+        <div class="project-card project-card--blue project-card--wide">
+          <div class="project-wide-content">
+            <div class="project-header">
+              <span class="project-num">05</span>
+              <span class="project-badge">Backend</span>
+            </div>
+            <div class="project-icon project-icon--blue">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </div>
+            <h3 class="project-title">SecretHitler-Bot</h3>
+            <p class="project-desc">A Discord bot that brings the Secret Hitler board game to life online — real-time game state management, secret role assignment via DMs, and full turn-by-turn automation for multiplayer sessions across any server.</p>
+            <div class="project-stack">
+              <span>Python</span><span>Discord.py</span><span>Bot Development</span><span>Game Logic</span><span>Async</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/p33ves/SecretHitler-Bot" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+                View on GitHub
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-wide-terminal">
+            <div class="terminal-bar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span class="terminal-title">bot.py</span>
+            </div>
+            <pre class="terminal-body"><code><span class="cmt">$ python bot.py --token $DISCORD_TOKEN</span>
+
+<span class="accent3">✓</span> Logged in as <span class="fn">SecretBot#1234</span>
+<span class="accent3">✓</span> Serving <span class="var">12</span> guilds · ready
+
+<span class="cmt"># p33ves-gaming / #game-room</span>
+<span class="text-muted">&gt;</span> <span class="str">!start</span> <span class="cmt">| 5 players joined</span>
+
+<span class="accent2">[GAME]</span> Roles assigned via DM
+<span class="accent2">[GAME]</span> Round 1 — nominate a Chancellor
+<span class="text-muted">&gt;</span> @vignesh nominates @player2
+
+<span class="accent2">[VOTE]</span> <span class="accent3">4 Ja</span> · <span class="kw">1 Nein</span> → Government elected
+<span class="accent2">[DRAW]</span> Policy enacted: <span class="accent3">Liberal ■■□□□</span></code></pre>
           </div>
         </div>
 
@@ -241,28 +374,32 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="section section-alt" id="contact">
+  <section class="section section-alt contact-section" id="contact">
     <div class="container">
-      <p class="section-eyebrow">// contact</p>
-      <h2 class="section-title">Get In <span>Touch</span></h2>
-      <div class="contact-wrapper fade-in">
+      <div class="contact-inner fade-in">
+        <p class="section-eyebrow">// contact</p>
+        <h2 class="contact-headline">
+          Let's build<br><span>something great.</span>
+        </h2>
         <p class="contact-desc">
-          I'm currently open to new opportunities. Whether you have a question,
-          a project idea, or just want to say hi — my inbox is always open.
+          Open to full-time roles and interesting data engineering projects.<br>
+          I respond within 24 hours.
         </p>
-        <a href="mailto:itsvigneshperumal@gmail.com" class="btn btn-primary btn-lg">
-          Say Hello
-        </a>
-        <div class="social-links">
-          <a href="https://github.com/p33ves" target="_blank" rel="noopener" title="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+        <div class="contact-actions">
+          <a href="mailto:itsvigneshperumal@gmail.com" class="btn btn-primary btn-lg">
+            Say Hello →
           </a>
-          <a href="https://www.linkedin.com/in/perumal-vignesh/" target="_blank" rel="noopener" title="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <a href="mailto:itsvigneshperumal@gmail.com" title="Email">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-          </a>
+          <div class="social-links">
+            <a href="https://github.com/p33ves" target="_blank" rel="noopener" title="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/perumal-vignesh/" target="_blank" rel="noopener" title="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:itsvigneshperumal@gmail.com" title="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
