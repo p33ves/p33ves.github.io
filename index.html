@@ -61,7 +61,7 @@
         <span class="hero-meta-dot"></span>
         <span class="hero-meta-item">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-          <span class="exp-years"></span>+ Years Experience
+          <span class="exp-years">9</span>+ Years Experience
         </span>
         <span class="hero-meta-dot"></span>
         <span class="hero-meta-item">
@@ -114,7 +114,7 @@
       <div class="about-grid fade-in">
         <div class="about-text">
           <p>
-            I'm a Senior Data Engineer with <span class="exp-years"></span>+ years of experience building data platforms and ML systems at scale across 5 companies and 3 cloud platforms.
+            I'm a Senior Data Engineer with <span class="exp-years">9</span>+ years of experience building data platforms and ML systems at scale across 5 companies and 3 cloud platforms.
             I studied at Simon Fraser University and have spent my career working across the full stack of modern data engineering — from lakehouse architecture and pipeline design to ML model deployment.
           </p>
           <p>
@@ -342,49 +342,51 @@
           </div>
         </div>
 
-        <!-- Wide: spans full row, horizontal layout -->
-        <div class="project-card project-card--blue project-card--wide">
-          <div class="project-wide-content">
-            <div class="project-header">
-              <span class="project-num">05</span>
-              <span class="project-badge">Backend</span>
-            </div>
-            <div class="project-icon project-icon--blue">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-              </svg>
-            </div>
-            <h3 class="project-title">SecretHitler-Bot</h3>
-            <p class="project-desc">A Discord bot that brings the Secret Hitler board game to life online — real-time game state management, secret role assignment via DMs, and full turn-by-turn automation for multiplayer sessions across any server.</p>
-            <div class="project-stack">
-              <span>Python</span><span>Discord.py</span><span>Bot Development</span><span>Game Logic</span><span>Async</span>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/p33ves/SecretHitler-Bot" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
-                View on GitHub
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-              </a>
-            </div>
+        <!-- Featured: spans 2 cols -->
+        <div class="project-card project-card--blue project-card--featured">
+          <div class="project-header">
+            <span class="project-num">05</span>
+            <span class="project-badge">Backend</span>
           </div>
-          <div class="project-wide-terminal">
-            <div class="terminal-bar">
-              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-              <span class="terminal-title">bot.py</span>
-            </div>
-            <pre class="terminal-body"><code><span class="cmt">$ python bot.py --token $DISCORD_TOKEN</span>
+          <div class="project-icon project-icon--blue">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <h3 class="project-title">SecretHitler-Bot</h3>
+          <p class="project-desc">A Discord bot that brings the Secret Hitler board game to life online — real-time game state management, secret role assignment via DMs, and full turn-by-turn automation for multiplayer sessions across any server.</p>
+          <div class="project-stack">
+            <span>Python</span><span>Discord.py</span><span>Bot Development</span><span>Game Logic</span><span>Async</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/p33ves/SecretHitler-Bot" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+              View on GitHub
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
+        </div>
 
-<span class="accent3">✓</span> Logged in as <span class="fn">SecretBot#1234</span>
-<span class="accent3">✓</span> Serving <span class="var">12</span> guilds · ready
-
-<span class="cmt"># p33ves-gaming / #game-room</span>
-<span class="text-muted">&gt;</span> <span class="str">!start</span> <span class="cmt">| 5 players joined</span>
-
-<span class="accent2">[GAME]</span> Roles assigned via DM
-<span class="accent2">[GAME]</span> Round 1 — nominate a Chancellor
-<span class="text-muted">&gt;</span> @vignesh nominates @player2
-
-<span class="accent2">[VOTE]</span> <span class="accent3">4 Ja</span> · <span class="kw">1 Nein</span> → Government elected
-<span class="accent2">[DRAW]</span> Policy enacted: <span class="accent3">Liberal ■■□□□</span></code></pre>
+        <!-- Regular: 1 col -->
+        <div class="project-card project-card--green">
+          <div class="project-header">
+            <span class="project-num">06</span>
+            <span class="project-badge">Open Source</span>
+          </div>
+          <div class="project-icon project-icon--green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>
+            </svg>
+          </div>
+          <h3 class="project-title">covid19-grapher</h3>
+          <p class="project-desc">Open source COVID-19 data visualization tool — interactive charts tracking cases, recoveries, and trends across countries and timelines.</p>
+          <div class="project-stack">
+            <span>Python</span><span>Pandas</span><span>Plotly</span><span>Data Viz</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/p33ves/covid19-grapher" target="_blank" rel="noopener" class="btn btn-outline btn-sm">
+              View on GitHub
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
           </div>
         </div>
 
