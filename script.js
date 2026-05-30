@@ -98,6 +98,11 @@ function type() {
 }
 type();
 
+/* ─── Dynamic years of experience ───────────────────────────────── */
+const CAREER_START = 2017;
+const yearsExp = new Date().getFullYear() - CAREER_START;
+document.querySelectorAll('.exp-years').forEach(el => { el.textContent = yearsExp; });
+
 /* ─── Counter animation ──────────────────────────────────────────── */
 function animateCounter(el) {
   const target = +el.dataset.target;
