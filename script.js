@@ -173,10 +173,12 @@ document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el)
 
 /* ─── Stat card auto-height ──────────────────────────────────────── */
 function fitStatCards() {
-  document.querySelectorAll('.stat-card').forEach(card => {
-    const inner = card.querySelector('.stat-card-inner');
-    inner.style.height = '';
+  const cards = document.querySelectorAll('.stat-card');
+  cards.forEach(card => { card.querySelector('.stat-card-inner').style.height = ''; });
 
+  let maxH = 0;
+
+  cards.forEach(card => {
     const w = card.offsetWidth;
 
     function measureFace(face) {
@@ -193,10 +195,15 @@ function fitStatCards() {
       return h;
     }
 
-    inner.style.height = Math.max(
+    const h = Math.max(
       measureFace(card.querySelector('.stat-card-front')),
       measureFace(card.querySelector('.stat-card-back'))
-    ) + 'px';
+    );
+    maxH = Math.max(maxH, h);
+  });
+
+  cards.forEach(card => {
+    card.querySelector('.stat-card-inner').style.height = maxH + 'px';
   });
 }
 
@@ -212,6 +219,25 @@ window.addEventListener('load', _runFit);
 /* ─── Stat card flip (click for mobile) ─────────────────────────── */
 document.querySelectorAll('.stat-card').forEach(card => {
   card.addEventListener('click', () => card.classList.toggle('flipped'));
+});
+
+/* ─── Headshot lightbox ──────────────────────────────────────────── */
+const headshotOverlay = document.getElementById('headshotOverlay');
+const navLogo = document.querySelector('.nav-logo');
+
+navLogo.addEventListener('click', e => {
+  if (window.scrollY < 60) {
+    e.preventDefault();
+    headshotOverlay.classList.add('active');
+  }
+});
+
+headshotOverlay.addEventListener('click', () => {
+  headshotOverlay.classList.remove('active');
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') headshotOverlay.classList.remove('active');
 });
 
 /* ─── Mobile menu ────────────────────────────────────────────────── */
