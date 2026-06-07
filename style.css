@@ -116,7 +116,7 @@ a:hover { color: #fff; }
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0.9rem 2.5rem;
+  padding: 0.55rem 2.5rem;
   background: rgba(6, 10, 20, 0.8);
   backdrop-filter: blur(24px);
   border-bottom: 1px solid rgba(24, 35, 64, 0.6);
@@ -132,7 +132,7 @@ a:hover { color: #fff; }
   text-decoration: none;
 }
 .nav-avatar {
-  width: 36px; height: 36px;
+  width: 28px; height: 28px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--border-hi);
@@ -351,7 +351,6 @@ a:hover { color: #fff; }
 
 /* ─── Stat / flip cards ─────────────────────────────────────────── */
 .stat-card {
-  perspective: 900px;
   position: relative;
   cursor: default;
   border-radius: var(--radius);
@@ -360,16 +359,12 @@ a:hover { color: #fff; }
 .stat-card-inner {
   position: relative;
   height: 200px;
-  transform-style: preserve-3d;
-  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
   border-radius: var(--radius);
 }
 
-.stat-card:hover .stat-card-inner,
-.stat-card.flipped .stat-card-inner { transform: rotateY(180deg); }
-
 .stat-card-face {
-  position: absolute; inset: 0;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: var(--radius);
@@ -378,17 +373,26 @@ a:hover { color: #fff; }
   justify-content: flex-start; text-align: center;
   background: var(--surface);
   border: 1px solid var(--border);
-  transition: border-color var(--transition);
+  transform: perspective(900px) rotateY(0deg);
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1), border-color var(--transition);
 }
 
-.stat-card:hover .stat-card-front,
-.stat-card.flipped .stat-card-front { border-color: var(--border-hi); }
-
 .stat-card-back {
-  transform: rotateY(180deg);
+  transform: perspective(900px) rotateY(180deg);
   background: var(--surface2);
   border-color: var(--border-hi);
   justify-content: center;
+}
+
+.stat-card:hover .stat-card-front,
+.stat-card.flipped .stat-card-front {
+  transform: perspective(900px) rotateY(-180deg);
+  border-color: var(--border-hi);
+}
+
+.stat-card:hover .stat-card-back,
+.stat-card.flipped .stat-card-back {
+  transform: perspective(900px) rotateY(0deg);
 }
 
 .stat-back-label {
@@ -712,7 +716,7 @@ a:hover { color: #fff; }
   .nav-links { display: none; flex-direction: column; }
   .nav-links.open {
     display: flex;
-    position: absolute; top: 58px; left: 0; right: 0;
+    position: absolute; top: 48px; left: 0; right: 0;
     background: rgba(6,10,20,0.97); padding: 1.25rem 1.5rem;
     border-bottom: 1px solid var(--border); gap: 0.25rem;
     backdrop-filter: blur(24px);
