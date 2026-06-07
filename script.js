@@ -201,11 +201,13 @@ function fitStatCards() {
 }
 
 window.addEventListener('resize', fitStatCards);
+const _runFit = () => requestAnimationFrame(fitStatCards);
 if (document.fonts) {
-  document.fonts.ready.then(fitStatCards);
+  document.fonts.ready.then(_runFit);
 } else {
-  fitStatCards();
+  _runFit();
 }
+window.addEventListener('load', _runFit);
 
 /* ─── Stat card flip (click for mobile) ─────────────────────────── */
 document.querySelectorAll('.stat-card').forEach(card => {
