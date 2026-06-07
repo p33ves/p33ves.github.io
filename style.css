@@ -716,15 +716,15 @@ a:hover { color: #fff; }
 /* ─── Headshot lightbox ─────────────────────────────────────────── */
 .headshot-overlay {
   position: fixed; inset: 0; z-index: 999;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+.headshot-overlay.active {
+  opacity: 1; visibility: visible; pointer-events: all;
   background: rgba(6, 10, 20, 0.82);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.28s ease;
-}
-.headshot-overlay.active {
-  opacity: 1; pointer-events: all;
 }
 .headshot-modal-img {
   width: min(260px, 72vw);

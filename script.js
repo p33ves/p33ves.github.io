@@ -208,7 +208,7 @@ function fitStatCards() {
 }
 
 window.addEventListener('resize', fitStatCards);
-const _runFit = () => requestAnimationFrame(fitStatCards);
+const _runFit = () => requestAnimationFrame(() => requestAnimationFrame(fitStatCards));
 if (document.fonts) {
   document.fonts.ready.then(_runFit);
 } else {
@@ -218,7 +218,11 @@ window.addEventListener('load', _runFit);
 
 /* ─── Stat card flip (click for mobile) ─────────────────────────── */
 document.querySelectorAll('.stat-card').forEach(card => {
-  card.addEventListener('click', () => card.classList.toggle('flipped'));
+  card.addEventListener('click', () => {
+    const wasFlipped = card.classList.contains('flipped');
+    document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('flipped'));
+    if (!wasFlipped) card.classList.add('flipped');
+  });
 });
 
 /* ─── Headshot lightbox ──────────────────────────────────────────── */
