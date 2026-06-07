@@ -16,7 +16,9 @@
 
   <!-- NAV -->
   <nav class="nav" id="nav">
-    <a href="#hero" class="nav-logo">vp.</a>
+    <a href="#hero" class="nav-logo">
+      <img src="headshot.jpeg" alt="Vignesh Perumal" class="nav-avatar" />
+    </a>
     <ul class="nav-links">
       <li><a href="#about" data-section="about">About</a></li>
       <li><a href="#skills" data-section="skills">Skills</a></li>
@@ -114,15 +116,10 @@
       <div class="about-grid fade-in">
         <div class="about-text">
           <p>
-            I'm a Senior Data Engineer with <span class="exp-years">9</span>+ years of experience. I've worked at 5 companies across Azure, GCP, and AWS, building data platforms and ML systems for real production workloads.
-            I went to Simon Fraser University and have been in this field since 2016, working on everything from HA/DR infrastructure and lakehouse design to pipeline frameworks and ML systems in production.
+            Senior Data Engineer with <span class="exp-years">9</span>+ years across Azure, GCP, and AWS at 5 companies. SFU grad building production data platforms since 2017 — from lakehouse architecture and pipeline frameworks to RAG systems and vector search.
           </p>
           <p>
-            My main focus is cloud data infrastructure: ingestion, data quality, governance, and the glue that holds it all together.
-            I've also shipped ML systems in production, including RAG pipelines and models backed by vector search.
-          </p>
-          <p>
-            I care about writing code that's easy to maintain and designing systems that don't fall apart when requirements change.
+            My focus is cloud data infrastructure: ingestion, quality, governance, and the systems that make it all reliable. I care most about code that's easy to maintain and systems that hold up when requirements change.
           </p>
           <a href="https://github.com/p33ves" target="_blank" rel="noopener" class="btn btn-outline">
             View GitHub Profile →
@@ -130,52 +127,88 @@
         </div>
         <div class="about-stats">
           <div class="stat-card">
-            <div class="stat-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
-              </svg>
+            <div class="stat-card-inner">
+              <div class="stat-card-face stat-card-front">
+                <div class="stat-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                  </svg>
+                </div>
+                <div class="stat-top">
+                  <span class="stat-currency">$</span><span class="stat-num" data-target="325">0</span><span class="stat-plus">K+</span>
+                </div>
+                <p class="stat-label">Cost Savings Delivered</p>
+                <p class="stat-sublabel">across 3 companies</p>
+                <span class="stat-flip-hint">hover to see how</span>
+              </div>
+              <div class="stat-card-face stat-card-back">
+                <p class="stat-back-label">how it happened</p>
+                <p class="stat-back-text">Optimized Spark clusters, eliminated idle compute, and decommissioned redundant pipelines — across Azure and Databricks over multiple companies.</p>
+              </div>
             </div>
-            <div class="stat-top">
-              <span class="stat-currency">$</span><span class="stat-num" data-target="325">0</span><span class="stat-plus">K+</span>
-            </div>
-            <p class="stat-label">Cost Savings Delivered</p>
-            <p class="stat-sublabel">across 3 companies</p>
           </div>
           <div class="stat-card">
-            <div class="stat-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
-              </svg>
+            <div class="stat-card-inner">
+              <div class="stat-card-face stat-card-front">
+                <div class="stat-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                  </svg>
+                </div>
+                <div class="stat-top">
+                  <span class="stat-num" data-target="1000">0</span><span class="stat-plus">+</span>
+                </div>
+                <p class="stat-label">Tables Automated</p>
+                <p class="stat-sublabel">via metadata-driven framework</p>
+                <span class="stat-flip-hint">hover to see how</span>
+              </div>
+              <div class="stat-card-face stat-card-back">
+                <p class="stat-back-label">how it happened</p>
+                <p class="stat-back-text">Built a config-driven ETL framework where schemas and transformations live in metadata — adding a new table takes minutes, not days of custom code.</p>
+              </div>
             </div>
-            <div class="stat-top">
-              <span class="stat-num" data-target="1000">0</span><span class="stat-plus">+</span>
-            </div>
-            <p class="stat-label">Tables Automated</p>
-            <p class="stat-sublabel">via metadata-driven framework</p>
           </div>
           <div class="stat-card">
-            <div class="stat-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-              </svg>
+            <div class="stat-card-inner">
+              <div class="stat-card-face stat-card-front">
+                <div class="stat-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                </div>
+                <div class="stat-top">
+                  <span class="stat-num" data-target="150">0</span><span class="stat-plus">x</span>
+                </div>
+                <p class="stat-label">Pipeline Speedup</p>
+                <p class="stat-sublabel">computation performance gain</p>
+                <span class="stat-flip-hint">hover to see how</span>
+              </div>
+              <div class="stat-card-face stat-card-back">
+                <p class="stat-back-label">how it happened</p>
+                <p class="stat-back-text">Rewrote a bottlenecked PySpark job using broadcast joins, partition pruning, and vectorized UDFs — cutting runtime from hours down to minutes.</p>
+              </div>
             </div>
-            <div class="stat-top">
-              <span class="stat-num" data-target="150">0</span><span class="stat-plus">x</span>
-            </div>
-            <p class="stat-label">Pipeline Speedup</p>
-            <p class="stat-sublabel">computation performance gain</p>
           </div>
           <div class="stat-card">
-            <div class="stat-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-              </svg>
+            <div class="stat-card-inner">
+              <div class="stat-card-face stat-card-front">
+                <div class="stat-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </div>
+                <div class="stat-top">
+                  <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
+                </div>
+                <p class="stat-label">Passion for Data</p>
+                <p class="stat-sublabel">always</p>
+                <span class="stat-flip-hint">hover for more</span>
+              </div>
+              <div class="stat-card-face stat-card-back">
+                <p class="stat-back-label">for real though</p>
+                <p class="stat-back-text">Nine years in and still finding new problems worth solving. The stack keeps changing — the curiosity doesn't.</p>
+              </div>
             </div>
-            <div class="stat-top">
-              <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
-            </div>
-            <p class="stat-label">Passion for Data</p>
-            <p class="stat-sublabel">always</p>
           </div>
         </div>
       </div>
@@ -304,9 +337,9 @@
             </svg>
           </div>
           <h3 class="project-title">azure-code-review</h3>
-          <p class="project-desc">Automated code review workflows for Azure DevOps. Handles PR analysis, policy enforcement, and quality gates integrated into CI/CD pipelines so issues get caught before they merge.</p>
+          <p class="project-desc">PowerShell scripts that parse Azure Data Factory and Synapse Analytics ARM templates, generating summary and verbose code review reports to catch pipeline misconfigurations before deployment.</p>
           <div class="project-stack">
-            <span>Azure DevOps</span><span>Python</span><span>REST API</span><span>CI/CD</span>
+            <span>Azure Data Factory</span><span>Synapse Analytics</span><span>PowerShell</span><span>ARM Templates</span>
           </div>
           <div class="project-footer">
             <a href="https://github.com/p33ves/azure-code-review" target="_blank" rel="noopener" class="btn btn-outline btn-sm">

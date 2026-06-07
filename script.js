@@ -171,6 +171,11 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
 
+/* ─── Stat card flip (click for mobile) ─────────────────────────── */
+document.querySelectorAll('.stat-card').forEach(card => {
+  card.addEventListener('click', () => card.classList.toggle('flipped'));
+});
+
 /* ─── Mobile menu ────────────────────────────────────────────────── */
 const toggle    = document.querySelector('.menu-toggle');
 const mobileNav = document.querySelector('.nav-links');

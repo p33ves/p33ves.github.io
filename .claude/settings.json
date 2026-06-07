@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Google_Drive__search_files",
+      "PowerShell(Rename-Item \"c:\\\\GitHub\\\\p33ves.github.io\\\\headshot.jpg\" \"headshot.jpeg\")"
+    ]
+  }
+}
