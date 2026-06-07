@@ -358,7 +358,7 @@ a:hover { color: #fff; }
 
 .stat-card-inner {
   position: relative;
-  height: 200px;
+  height: 180px; /* fallback; JS overrides with measured content height */
   border-radius: var(--radius);
 }
 

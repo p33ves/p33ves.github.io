@@ -171,6 +171,42 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
 
+/* ─── Stat card auto-height ──────────────────────────────────────── */
+function fitStatCards() {
+  document.querySelectorAll('.stat-card').forEach(card => {
+    const inner = card.querySelector('.stat-card-inner');
+    inner.style.height = '';
+
+    const w = card.offsetWidth;
+
+    function measureFace(face) {
+      const clone = face.cloneNode(true);
+      Object.assign(clone.style, {
+        position: 'fixed', top: '-9999px', left: '-9999px',
+        right: 'auto', bottom: 'auto',
+        width: w + 'px', height: 'auto',
+        transform: 'none', visibility: 'hidden'
+      });
+      document.body.appendChild(clone);
+      const h = clone.offsetHeight;
+      document.body.removeChild(clone);
+      return h;
+    }
+
+    inner.style.height = Math.max(
+      measureFace(card.querySelector('.stat-card-front')),
+      measureFace(card.querySelector('.stat-card-back'))
+    ) + 'px';
+  });
+}
+
+window.addEventListener('resize', fitStatCards);
+if (document.fonts) {
+  document.fonts.ready.then(fitStatCards);
+} else {
+  fitStatCards();
+}
+
 /* ─── Stat card flip (click for mobile) ─────────────────────────── */
 document.querySelectorAll('.stat-card').forEach(card => {
   card.addEventListener('click', () => card.classList.toggle('flipped'));
